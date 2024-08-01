@@ -1,14 +1,10 @@
 import { Request, Response } from "express";
+import { ReuniaoService } from "../../../application/reuniao.use-case";
 
-export interface Reuniao {
-  nome: string,
-  data: Date
-}
-
-const reunioes: Reuniao[] = []
+const service = new ReuniaoService()
 
 export function listarReunioes(req: Request, res: Response) {
-  const response = [...reunioes]
+  const response = service.listarReunioes()
 
   return res.status(200).json(response)
 }
@@ -18,6 +14,8 @@ export function criarReuniao(req: Request, res: Response) {
     nome: req.body.nome,
     data: new Date(req.body.data)
   }
-  reunioes.push(reuniao)
-  return res.status(200).json(reuniao)
+
+  const reuniaoResposta = service.criarReuniao(reuniao)
+
+  return res.status(200).json(reuniaoResposta)
 }
