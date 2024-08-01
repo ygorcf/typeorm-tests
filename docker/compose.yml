@@ -1,5 +1,7 @@
+name: typeorm-tests
+
 services:
-  frontend:
+  backend:
     image: typeorm-tests:latest
     ports:
       - "8080:8080"
