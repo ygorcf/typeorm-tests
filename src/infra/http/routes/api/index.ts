@@ -1,6 +1,6 @@
-import { Router } from 'express'
-import reuniaoRouter from './reuniao'
+import { Router } from "express";
+import reuniaoRouter from "./reuniao";
 
-export const router = Router()
+export const router = Router();
 
-router.use('/reuniao', reuniaoRouter)
+router.use("/reuniao", reuniaoRouter);

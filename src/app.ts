@@ -1,4 +1,4 @@
-import { Server, ExitStatus } from "./server";
+import { ExitStatus, Server } from "./server";
 
 const server = new Server();
 
@@ -11,7 +11,7 @@ const server = new Server();
   }
 })();
 
-['SIGTERM', 'SIGINT'].forEach((event) => {
+["SIGTERM", "SIGINT"].forEach((event) => {
   process.on(event, async (signal) => {
     server._logger.warn(`${signal} Signal received!`);
     await server.close();
