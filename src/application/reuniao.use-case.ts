@@ -1,15 +1,17 @@
+import { Service } from "typedi";
 import { Reuniao } from "./model/reuniao.model";
-import { CriarReuniaoUseCase } from "./use-case/criar-reuniao.use-case";
-import { ListarReuniaoUseCase } from "./use-case/listar-reuniao.use-case";
+// import { CriarReuniaoUseCase } from "./services/criar-reuniao.service";
+// import { ListarReuniaoUseCase } from "./services/listar-reuniao.service";
 
+@Service()
 export class ReuniaoService {
   listarReunioes() {
-    const useCase = new ListarReuniaoUseCase();
-    return useCase.execute();
+    // const useCase = new ListarReuniaoUseCase();
+    // return useCase.execute();
   }
 
   criarReuniao(reuniao: Reuniao) {
-    const useCase = new CriarReuniaoUseCase();
-    return useCase.execute(reuniao);
+    // const useCase = new CriarReuniaoUseCase();
+    // return useCase.execute(reuniao);
   }
 }
