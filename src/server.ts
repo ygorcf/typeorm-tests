@@ -1,5 +1,6 @@
 import express from "express";
 import * as http from "http";
+import { AppDataSource } from "./infra/database/datasource";
 import router from "./infra/http/routes";
 
 export enum ExitStatus {
@@ -28,6 +29,8 @@ export class Server {
 
   async start() {
     try {
+      await this.configureDatabase();
+
       this._server = this._app.listen(this._app.get("port"), () => {
         this._logger.info(
           "🚀 Server is running on port " + this._app.get("port"),
@@ -72,5 +75,9 @@ export class Server {
 
   private configureMiddleware() {
     this._app.use(express.json({ limit: "200mb" }));
+  }
+
+  private configureDatabase() {
+    return AppDataSource.initialize();
   }
 }

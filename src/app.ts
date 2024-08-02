@@ -1,3 +1,4 @@
+import "reflect-metadata";
 import { ExitStatus, Server } from "./server";
 
 const server = new Server();
