@@ -9,5 +9,5 @@ export const AppDataSource = new DataSource({
   migrations: [],
   subscribers: [],
   type: "sqlite",
-  database: "./src/database/database.sqlite",
+  database: "./database/database.sqlite",
 });

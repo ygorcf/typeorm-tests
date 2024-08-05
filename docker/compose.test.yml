@@ -21,6 +21,8 @@ services:
       - type: bind
         source: "../test"
         target: /app/test
+      - type: tmpfs
+        target: /app/database
     command: npm run test:api
     depends_on:
       - backend

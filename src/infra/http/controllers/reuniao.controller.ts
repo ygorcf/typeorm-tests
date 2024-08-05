@@ -1,10 +1,7 @@
 import { Request, Response } from "express";
 import { Container } from "typedi";
-import { ReuniaoService } from "../../../application/reuniao.use-case";
 import { CriarReuniaoService } from "../../../application/services/criar-reuniao.service";
 import { ListarReuniaoService } from "../../../application/services/listar-reuniao.service";
-
-const service = new ReuniaoService();
 
 export async function listarReunioes(req: Request, res: Response) {
   const useCase = Container.get(ListarReuniaoService);
