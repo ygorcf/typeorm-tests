@@ -6,6 +6,8 @@
   "scripts": {
     "test:api": "jest ./test",
     "test:api:dev": "npm run test:api -- --watch",
+    "test:unit": "jest ./src",
+    "test:unit:dev": "npm run test:unit -- --watch",
     "start": "tsx src/app.ts",
     "start:dev": "tsx watch src/app.ts"
   },

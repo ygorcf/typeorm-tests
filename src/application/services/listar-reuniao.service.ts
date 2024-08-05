@@ -3,11 +3,9 @@ import { ReuniaoRepository } from "../repositories/reuniao.repository";
 
 @Service()
 export class ListarReuniaoService {
-  @Inject(() => ReuniaoRepository) private repository: ReuniaoRepository;
+  @Inject(() => ReuniaoRepository) private repositorio: ReuniaoRepository;
 
-  async execute() {
-    const reunioes = await this.repository.listarReuniao();
-
-    return reunioes;
+  executar() {
+    return this.repositorio.listarReuniao();
   }
 }

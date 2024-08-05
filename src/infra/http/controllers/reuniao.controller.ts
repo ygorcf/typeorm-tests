@@ -6,7 +6,7 @@ import { ListarReuniaoService } from "../../../application/services/listar-reuni
 export async function listarReunioes(req: Request, res: Response) {
   const useCase = Container.get(ListarReuniaoService);
 
-  const response = await useCase.execute();
+  const response = await useCase.executar();
 
   return res.status(200).json(response);
 }
@@ -18,7 +18,7 @@ export async function criarReuniao(req: Request, res: Response) {
   };
 
   const useCase = Container.get(CriarReuniaoService);
-  const reuniaoResposta = await useCase.execute(reuniao);
+  const reuniaoResposta = await useCase.executar(reuniao);
 
   return res.status(200).json(reuniaoResposta);
 }

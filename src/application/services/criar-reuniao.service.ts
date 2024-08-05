@@ -6,7 +6,7 @@ import { ReuniaoRepository } from "../repositories/reuniao.repository";
 export class CriarReuniaoService {
   @Inject(() => ReuniaoRepository) private repository: ReuniaoRepository;
 
-  async execute(reuniao: Reuniao) {
+  async executar(reuniao: Reuniao) {
     const resultado = await this.repository.criarReuniao(reuniao);
     return resultado;
   }
