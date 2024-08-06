@@ -41,11 +41,13 @@ describe("/reuniao", () => {
     expect(responseAdicionar.body).toEqual({
       nome: "Reuniao 1",
       data: "2024-08-02T10:19:00.000Z",
+      id: 1,
     });
     expect(listagemDepois.body).toHaveLength(1);
     expect(listagemDepois.body[0]).toEqual({
       nome: "Reuniao 1",
-      data: "2024-08-02T10:19:00.000Z",
+      data: "2024-08-02",
+      id: 1,
     });
   });
 });
